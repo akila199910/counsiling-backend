@@ -1,13 +1,19 @@
 import { IsNotEmpty, IsUUID } from "class-validator";
 
 export class CreateAppointmentDto {
-    
+  
+  // @IsNotEmpty()
+  // @IsUUID()
+  // userId: string;
+
   @IsNotEmpty()
   appointmentDate: Date;
 
-  status?: string;
+  @IsNotEmpty()
+  startTime: string;
 
   @IsNotEmpty()
-  @IsUUID()
-  userId: string;
+  endTime: string;
+
+  status?: string;
 }

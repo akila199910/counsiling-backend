@@ -26,12 +26,12 @@ export class Appointment {
     })
     appointmentDate: Date
 
-    // @Column({
-    //     nullable: true,
-    //     type: 'varchar',
-    //     length: 50
-    // })
-    // status: string
+    @Column({
+        nullable: true,
+        type: 'varchar',
+        length: 20
+    })
+    status: string
 
     @ManyToOne(() => User, (user) => user.appointments, { onDelete: 'CASCADE' })
     @JoinColumn({ name: 'userId' })
